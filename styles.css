@@ -1,3 +1,17 @@
+:root{
+    --priblue:#3292ff;
+    --secblue:#2b85eb;
+    --triblue:#2971d8;
+    --priyellow:#ffc400;
+    --secyellow:#d8af28;
+    --treyellow:#ddbc51;
+    --prigray:#777777;
+    --secgray: #b8b8b8;
+    --tregray: #d4d4d4;
+    --priwhite: #ece7e7;
+    --gradiantcolor:linear-gradiant(to right, blue ,red);
+}
+
 *,*::after,*::before{
     padding: 0%;
     margin: 0%;
@@ -13,29 +27,28 @@ li{
 body{
     position: relative;
     min-height: 100vh;
+    background-color: #fff;
     font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',  Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 header{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
     height: 60px;
-    box-shadow: 0 2px 5px #b8b8b8;
+    box-shadow: 0 2px 5px var(--prigray);
     align-items: center;
     justify-content: space-between;
     padding: 0 64px;
-    background-color: #0000ff77;
+    background-color: var(--priblue);
+    z-index: 999;
 }
 
-/* @media screen (max-width:600) {
-    
-} */
 .logo{
     font-size: 32px;
     font-weight: bold;
-    color: #ffc400;
+    color: var(--secyellow);
 }
 nav ul{
     display: flex;
@@ -44,34 +57,28 @@ nav ul{
 }
 nav ul li{
     padding: 10px;
-    color: #b8b8b8;
+    color: var(--secgray);
 }
 nav ul li a{
-    color: #ece7e7;
+    color: var(--priwhite);
     font-weight: 600;
 }
-@media screen and (max-width:600px) {
-    header{
-        padding: 0 8px;
-    }
-    nav ul li{
-        padding: 4px;
-        color: #b8b8b8;
-    }
-}
+
 main{
 padding: 60px 30px 30px 30px;
+min-height: 90vh;
+align-content: center;
 }
 .title{
     text-align: center;
     margin: 96px 0 32px 0;
-    color: #777777;
+    color: var(--prigray);
     opacity: .6;
     text-transform: uppercase;
 }
 .sub-title{
     text-align: center;
-    color: goldenrod;
+    color: var(--treyellow);
     opacity: .5;
 }
 .discription{
@@ -88,33 +95,27 @@ padding: 60px 30px 30px 30px;
     font-size: 18px;
     font-weight: 600;
 }
-
-.btn{
+.btn-container{
     padding: 16px 0;
     max-width: 600px;
     margin: 0 auto;
 }
-.getstarted{
+.btn{
     padding: 8px 32px;
-    background-color: #ffc400;
     border-radius: 4px;
     outline: none;
     border: none;
-    color: #0000ff77;
+    color: var(--triblue);
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
     margin: 5px;
 }
+.getstarted{
+    background-color: var(--priyellow);
+}
 .learnmore{
-    padding: 8px 32px;
-    border-radius: 4px;
-    outline: none;
     color: #0000ff77;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    margin: 5px;
 }
 
 .organaizations{
@@ -126,10 +127,10 @@ padding: 60px 30px 30px 30px;
 }
 .organaizations h1{
     text-align: center;
-    color: #777777;
+    color: var(--prigray);
     font-size: 24px;
     text-transform: uppercase;
-    text-shadow: 0 3px 3px gray;
+    text-shadow: 0 3px 3px var(--prigray);
     padding: 32px;
 }
 .co-organ{
@@ -141,13 +142,84 @@ padding: 60px 30px 30px 30px;
 }
 .co-organ div{
     height: 60px;
-    box-shadow: 0 5px 5px gray;
+    box-shadow: 0 5px 5px var(--prigray);
     margin: 8px;
     position: relative;
-    background-color: rgba(0, 0, 255, 0.801);
-    border-radius: 8px;
+    background-color: var(--triblue);
+    border-radius: 4px;
+    text-align: center;
+    padding: 8px;
+    color: var(--priwhite);
 }
 footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: var(--prigray);
+    text-align: center;
+    font-weight: 600;
+    font-size: medium;
+    padding: 8px;
+}
+footer ul{
+    display: flex;
+}
+footer ul li{
+    padding: 8px;
+}
+.regform,.signInform {
+    max-width: 400px;
+    margin: 16px auto;
+    display: block;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 5px var(--secgray);
+    padding: 8px;
+  }
+  .regform h1,.signInform h1{
+    padding: 16px;
+    text-align: center;
+    color: var(--prigray);
+    opacity: .6;
+    text-transform: uppercase;
+    box-shadow: 0 5px 5px var(--secgray);
+  }
+  .forminput{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: stretch;
+    padding: 8px;
+  }
+  .forminput label{
+    font-size: large;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 4px;
+    color: var(--prigray);
+  }
+  .forminput input{
     width: 100%;
-    height: 100px;
+    height: 40px;
+    border: 1px solid var(--secgray);
+    border-radius: 4px;
+    opacity: .6;
+    padding: 0 8px;
+    font-size: medium;
+    font-weight: 600;
+    color: var(--prigray);
+  }
+
+@media screen and (max-width:600px) {
+    header{
+        padding: 0 8px;
+    }
+    nav ul li{
+        padding: 4px;
+        color: var(--secgray);
+    }
+    footer ul{
+        display: flex;
+        flex-direction: column;
+    }
 }
